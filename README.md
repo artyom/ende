@@ -29,7 +29,7 @@ Install:
 	Usage:
 	  -in="": path to plaintext file to encrypt
 	  -key="": path to public key in PEM format
-	  -out="": path to encrypted file to create (should not exist)
+	  -out="": path to encrypted file to write
 
 `decrypt` usage:
 
@@ -37,6 +37,6 @@ Install:
 	Usage:
 	  -in="": path to encrypted file to decrypt
 	  -key="": path to private key in PEM format
-	  -out="": path to decrypted file to create (should not exist)
+	  -out="": path to decrypted file to write
 
 [1]: http://golang.org/pkg/crypto/rand/#Reader

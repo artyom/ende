@@ -57,7 +57,7 @@ func main() {
 	}
 	stream := cipher.NewCTR(block, header[:block.BlockSize()])
 
-	out, err := os.OpenFile(outFile, os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0644)
+	out, err := os.OpenFile(outFile, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -84,7 +84,7 @@ func init() {
 	}
 	flag.StringVar(&pubKey, "key", "", "path to public key in PEM format")
 	flag.StringVar(&inFile, "in", "", "path to plaintext file to encrypt")
-	flag.StringVar(&outFile, "out", "", "path to encrypted file to create (should not exist)")
+	flag.StringVar(&outFile, "out", "", "path to encrypted file to write")
 	flag.Parse()
 }
 
